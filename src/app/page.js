@@ -1,94 +1,78 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import './page.scss'
+import Header from "@/components/Header/Header";
+import Card from "@/components/Card/Card";
+import Panel from "@/components/Panel/Panel";
+import Description from "@/components/Description/Description";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+    <div className={"page"}>
+      <Header/>
+      <main>
+        <section className="hero">
+          
+          <div className="hero-content">
+            <h1>Neon Landing Page</h1>
+            <p>This is a simple landing page created with Next.js and SCSS.</p>
+            <button>Learn More</button>
+          </div>
+          
+          
+        </section>
+        <section className="projects" >
+          <h2>Neon Ideas</h2>
+          <ul>
+              <li>
+                <Card cardName = {"Style"}/>
+              </li>
+              <li>
+                <Card cardName = {"Style"}/>
+              </li>
+              <li>
+                <Card cardName = {"Style"}/>
+              </li>
+              <li>
+                <Card cardName = {"Style"}/>
+              </li>
+          </ul>
+        </section>
+        <Panel/>
+        <Description/>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer>
+        <section className='footer-content'>
+          <h2>Neon Page</h2>
+    
+          <div className='aboutus-links'>
+            <h3>About Us</h3>
+            <ul>
+              <li>Product</li>
+              <li>Pricing</li>
+              <li>Documentation</li>
+              <li>Company</li>
+              <li>Support</li>
+            </ul>
+          </div>
+          <div className='socials'>
+            <h3>Social Medias</h3>
+            <ul>
+              <li>
+                <FaFacebook className="social-icon" fill='white' size={30}/>
+              </li>
+              <li>
+                <FaInstagram className="social-icon" fill='white' size={30}/>
+              </li>
+              <li>
+                <FaTwitter className="social-icon" fill='white' size={30}/>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <p>Made By Ruan Mesquita - 2025</p>
       </footer>
     </div>
   );
